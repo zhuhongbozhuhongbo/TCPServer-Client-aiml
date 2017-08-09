@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiml>
+<category>
+        <pattern>傻 瓜</pattern>
+        <template>你才是傻瓜！我可是聪明的一休哥~</template>
+    </category>
+</aiml>
