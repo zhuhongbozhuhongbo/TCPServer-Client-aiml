@@ -6,17 +6,7 @@
 上传的文件中TCPClient.py和TCPClient_NonGraphical.py分别为tk GUI界面的客户端和非图形界面的客户端程序，TCPServer.py为服务端程序
 运行时，需要先运行服务端程序TCPServer.py，再运行客户端程序，目前支持服务端与多客户端之间通信，并且用户可将自己的.aiml文件（输入文件的绝对路径，例如D:\alice\alice.aiml）上传到服务端进行学习测试
 
-PS:涉及到aiml语言、socket库、client与server之间文件传输，多进程等知识
+PS:
+涉及到aiml语言、socket库、client与server之间文件传输，多进程等知识
 在编写aiml时建议按主题来编写，并且一个主题在一个文件里，每个主题用topic来标识，在用<srai>时，尽量使最模糊的关键词作为源pattern，举个例子：
-  <category><pattern>否</pattern><template><srai>不 *</srai> </template> </category>
-	<category><pattern>不</pattern><template><srai>不 *</srai> </template> </category>
-	<category><pattern>NO</pattern><template><srai>不 *</srai> </template> </category>
-	<category>  ——————————————————————————————————————————————————————————————————————————> 源category
-		<pattern>不 *</pattern>
-		<that>您是要买车票吗？</that>
-		<template>
-			那要做什么呢？
-		</template>
-	</category>
-  上例中，否、不、NO、不*是等价的，我们希望得到相同的回答“那要做什么呢？”，应该让模糊匹配词 “不 *”在源category中
-  另外，pattern中，如果模式匹配的是英文，要全部大写，若是中文，则字与字之间需要用空格隔开；而template则没有此规定...
+在上传的BuyTicket.aiml文件中第85-94行则可以说明，否、不、NO、不*是等价的，我们希望得到相同的回答“那要做什么呢？”，应该让模糊匹配词 “不 *”在源category中；另外，pattern中，如果模式匹配的是英文，要全部大写，若是中文，则字与字之间需要用空格隔开；而template则没有此规定...
