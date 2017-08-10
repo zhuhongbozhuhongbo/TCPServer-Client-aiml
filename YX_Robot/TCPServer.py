@@ -18,7 +18,7 @@ import threading
 reload(sys)
 sys.setdefaultencoding('utf-8')
 #####################################################################
-os.chdir("D:\Robot") #打开aiml库
+os.chdir("\Robot") #打开aiml库
 kernel = aiml.Kernel()
 # if os.path.isfile("bot_brain.brn"):
 #     kernel.bootstrap(brainFile = "bot_brain.brn")
