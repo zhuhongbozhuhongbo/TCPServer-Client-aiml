@@ -12,6 +12,7 @@
         <!-- <learn>是一个aiml文件 -->
         <template>
 			<learn>basic_chat.aiml</learn>
+			<learn>BuyTicket.aiml</learn>
         </template>
     </category>
 </aiml>

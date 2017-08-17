@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 	<category>
-		<pattern>购 票</pattern>
+		<pattern>* 买 * 票</pattern>
 		<template>欢迎您来到<set name="topic">购票</set>系统~</template>
 	</category>
+	<category><pattern>买 票</pattern><template><srai>* 买 * 票</srai> </template> </category>
+	<category><pattern>购 票</pattern> <template><srai>* 买 * 票</srai> </template> </category>
+	<category><pattern>购 * 票</pattern> <template><srai>* 买 * 票</srai> </template> </category>
+	<category><pattern>* 购 * 票</pattern> <template><srai>* 买 * 票</srai> </template> </category>
+	<category><pattern>买 * 票</pattern> <template><srai>* 买 * 票</srai> </template> </category>
 	
 <topic name="购票">
 	<category>
@@ -112,18 +117,19 @@
 		<that>您想购买几号的车票呢？</that>
 		<template>
 			<think><set name="日期"><star/></set></think>
-			<star/>的发车时间："8:20、9:00、10:05、12:00、13:00、15:26"
-			您想购买哪个时间段的车票呢？
+			<star/>的发车时间："8点20、9点00、10点05、12点00、13点00、15点26" 您想购买哪个时间段的车票呢？
 		</template>
 	</category>
 	
 	<category>
 		<pattern>* 点 *</pattern>
+		<that>* 您想购买哪个时间段的车票呢？</that>
 		<template>
-			购票成功，请您于<get name="日期"/><star index="1"/>:<star index="2"/>准时乘车，是否 需要购买出行保险？
+			购票成功，请您于<get name="日期"/> <star index="1"/>:<star index="2"/>准时乘车，是否 需要购买出行保险？
 		</template>
 	</category>
 	<category><pattern>* : *</pattern><template><srai>* 点 *</srai> </template> </category>
+	<category><pattern>*: *</pattern><template><srai>* 点 *</srai> </template> </category>
 	<category><pattern>* ：*</pattern> <template><srai>* 点 *</srai> </template> </category>
 	<category><pattern>*：*</pattern> <template><srai>* 点 *</srai> </template> </category>
 	<category><pattern>*:*</pattern> <template><srai>* 点 *</srai> </template> </category>
@@ -146,7 +152,7 @@
 		<pattern>是</pattern>
 		<that>* 需要购买出行保险？</that>
 		<template>
-			好的~已为您订购30元/年意外险~
+			好的~已为您订购30元/年意外险~<set name="topic">''</set>
 		</template>
 	</category>
 	<category><pattern>需 要</pattern><template><srai>是</srai> </template> </category>

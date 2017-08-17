@@ -18,7 +18,7 @@ import threading
 reload(sys)
 sys.setdefaultencoding('utf-8')
 #####################################################################
-os.chdir("D:\Robot") #打开aiml库
+os.chdir("\Robot") #打开aiml库
 kernel = aiml.Kernel()
 # if os.path.isfile("bot_brain.brn"):
 #     kernel.bootstrap(brainFile = "bot_brain.brn")
@@ -34,6 +34,10 @@ def function(tcpclient, addr):
     while True:
         try:
             fhead = tcpclient.recv(FILEINFO_SIZE)
+            if not fhead:
+                print "the socket partner maybe closed"
+                tcpclient.close()
+                break
             if "aiml" not in fhead.split('.')[-1]:
                 tcpclient.send(kernel.respond(fhead).encode('utf-8'))
             else:

@@ -59,11 +59,18 @@ class TcpClient:
             self.sentmessage()
 
     def __init__(self):
-        self.client = socket(AF_INET, SOCK_STREAM)
-        self.client.connect((self.HOST, self.PORT))
+        #self.client = socket(AF_INET, SOCK_STREAM)
+        #self.client.connect((self.HOST, self.PORT))
         while True:
-            self.sentmessage()
-            time.sleep(1) #sleep 1s
+            self.client = socket(AF_INET, SOCK_STREAM)
+            try:
+                self.client.connect((self.HOST, self.PORT))
+                self.sentmessage()
+                time.sleep(1) #sleep 1s
+            except error,e:
+                print "聪明的一休说："+"Get connect error as",e
+                continue
+            self.client.close()
 #####################################################################
 if __name__ == "__main__":
     client = TcpClient()
