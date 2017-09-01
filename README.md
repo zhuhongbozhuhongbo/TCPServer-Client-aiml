@@ -1,7 +1,7 @@
 # TCPServer-Client-aiml
 一款基于aiml&socket的聊天机器人v1.0
 
-这是基于aiml和socket的聊天机器人，在运行之前，你需要先安装aiml库（具体可参考http://www.itnose.net/detail/6645553.html）
+这是基于aiml和socket的聊天机器人，在运行之前，你需要先安装aiml库（具体可参考http://www.itnose.net/detail/6645553.html ）
 但是，AIML解释器对中文支持不好。实际上，Python下的Pyaiml模块（解析器）已经能比较好的支持中文，但是也存在以下问题：英文单词间一般都有空格或标点区分，因此具备一种“自然分词”特性，由于中文输入没有以空格分隔的习惯，以上会在实践中造成一些不便。比如要实现有/无空格的输入匹配，就需要在规则库中同时包含这两种模式。可用上传的程序中的_init_.py AimlParser.py DefaultSubs.py Kernel.py LangSupport.py PatternMgr.py Utils.py WordSub.py这8个py文件替换原aiml库中的相应文件，这样经过测试可以较好地支持中文。
 上传的文件中TCPClient.py和TCPClient_NonGraphical.py分别为tk GUI界面的客户端和非图形界面的客户端程序，TCPServer.py为服务端程序
 运行时，需要先运行服务端程序TCPServer.py，再运行客户端程序，目前支持服务端与多客户端之间通信，并且用户可将自己的.aiml文件（输入文件的绝对路径，例如D:\alice\alice.aiml）上传到服务端进行学习测试
